@@ -3,7 +3,7 @@
     xmlns="http://schemas.nativescript.org/tns.xsd">
 
     <ActionBar>
-        <Label text="Home"></Label>
+        <Label text="Schedule"></Label>
     </ActionBar>
 
     <ListView items="{{ items }}" itemTap="onItemTap">
