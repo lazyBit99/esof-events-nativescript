@@ -1,5 +1,7 @@
 @import "~@nativescript/theme/core";
 @import "~@nativescript/theme/blue";
+@import "./schedule/schedule";
+
 
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
@@ -43,4 +45,8 @@
         vertical-align: top;
         margin-top: 20%;
     }
+}
+
+ActionBar.schedule {
+    background-color: red;
 }
