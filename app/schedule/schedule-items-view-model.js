@@ -4,8 +4,8 @@ function ScheduleItemsViewModel() {
     const viewModel = observableModule.fromObject({
         items: [
             {
-                name: "Item 1",
-                description: "Description for Item 1"
+                name: "Colazione",
+                description: "8:00 - 9:00 Caffè degli Specchi"
             },
             {
                 name: "Item 2",
