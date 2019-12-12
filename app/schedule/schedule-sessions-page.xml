@@ -1,0 +1,20 @@
+<Page navigatingTo="onNavigatingTo" 
+    xmlns:lv="nativescript-ui-listview">
+
+    <ActionBar class="schedule">
+        <Label text="Schedule" />
+    </ActionBar>
+
+    <lv:RadListView class="myList" items="{{ sessions }}" row="1" groupingFunction="{{ myGroupingFunc }}">
+        <lv:RadListView.itemTemplate>
+            <StackLayout orientation="vertical">
+                <StackLayout class="wrap">
+                    <Label fontSize="16" class="border-list" text="{{ nome }}" textWrap="true"></Label>
+                    <Label fontSize="13" class="border-list subtitle" text="{{ subtitle }}" textWrap="true">
+                    </Label>
+                    <StackLayout class="separator" />
+                </StackLayout>
+            </StackLayout>
+        </lv:RadListView.itemTemplate>
+    </lv:RadListView>
+</Page>
