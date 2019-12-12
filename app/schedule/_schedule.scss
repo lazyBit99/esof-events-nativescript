@@ -1,21 +1,28 @@
-
 $scheduleColor: #3880ff;
+
 ActionBar.schedule {
-    background-color: $scheduleColor;
+	background-color: $scheduleColor;
 }
+
 .myList {
-    .wrap {
-        background-color: #ffffff;
-        padding-bottom: 0;
-    }
+	.wrap {
+		background-color: #ffffff;
+		padding-bottom: 0;
+	}
 }
 
 .border-list {
-    border-left-width: 3;
-    border-color: #3bc7c4;
-    margin: 0;
-    // class="border-list sub"
-    &.sub {
-        color: rgba(0, 0, 0, 0.4);
-    }
+	border-left-width: 3;
+	border-color: $scheduleColor;
+	margin: 0;
+
+	&.subtitle {
+		color: rgba(0, 0, 0, 0.4);
+	}
+}
+
+.separator {
+	height: 2;
+	margin-top: 10;
+	background-color: #bdbdbd;
 }
