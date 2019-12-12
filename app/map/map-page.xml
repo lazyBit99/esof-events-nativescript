@@ -2,7 +2,7 @@
     navigatingTo="onNavigatingTo"
     xmlns:maps="nativescript-google-maps-sdk">
 
-    <ActionBar backgroundColor="#7044ff">
+    <ActionBar>
         <Label text="Map"></Label>
     </ActionBar>
 
