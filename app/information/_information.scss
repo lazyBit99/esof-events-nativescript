@@ -1,3 +1,11 @@
+$informationColor: #ffce00;
+
+
+ActionBar {
+ background-color: $informationColor;
+}
+
+
 Page.info {
   StackLayout {
     Label,
