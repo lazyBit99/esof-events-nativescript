@@ -1,14 +1,32 @@
-const observableModule = require("tns-core-modules/data/observable");
-const data = require('./data');
-const redata = data.map((item) => {
-    item.interventocompleto = `${item.nome} — ${item.inizio} ${item.fine}`
-    return item
-});
+const observableModule = require('tns-core-modules/data/observable')
+const data = require('./data')
+
+const dataToSpeakers = data.map(speaker => {
+	// speaker.interventocompleto = `${speaker.nome} — ${speaker.inizio} ${speaker.fine}`
+	return speaker
+})
+
+const dataToInterventi = data.map(interventi => {
+	// speaker.interventocompleto = `${speaker.nome} — ${speaker.inizio} ${speaker.fine}`
+	return interventi
+})
+
 function SpeakerViewModel() {
-    const viewModel = observableModule.fromObject({
-       items: redata
-    });
-    return viewModel;
+	const viewModel = observableModule.fromObject({
+		speakers: dataToSpeakers,
+    })
+    
+	return viewModel
 }
 
-module.exports = SpeakerViewModel;
+
+function InterventiViewModel() {
+	const viewModel = observableModule.fromObject({
+		speakers: dataToInterventi,
+    })
+    
+	return viewModel
+}
+
+module.exports = SpeakerViewModel
+module.exports = InterventiViewModel
