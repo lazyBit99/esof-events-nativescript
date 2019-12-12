@@ -1,25 +1,25 @@
 <BottomNavigation>
 	<TabStrip>
-		<TabStripItem class="navigation__item">
+		<TabStripItem class="navigation__item schedule-tab">
 			<Label text="Schedule" />
 			<Image src="font://&#xf073;" class="far t-36" />
 		</TabStripItem>
-		<TabStripItem class="navigation__item">
+		<TabStripItem class="navigation__item speakers-tab">
 			<Label text="Speakers" />
 			<Image src="font://&#xf500;" class="far t-36" />
 		</TabStripItem>
-		<TabStripItem class="navigation__item">
+		<TabStripItem class="navigation__item map-tab">
 			<Label text="Map" />
 			<Image src="font://&#xf279;" class="fas t-36" />
 		</TabStripItem>
-		<TabStripItem class="navigation__item">
+		<TabStripItem class="navigation__item information-tab">
 			<Label text="Information" />
 			<Image src="font://&#xf05a;" class="fas t-36" />
 		</TabStripItem>
 	</TabStrip>
 
 	<TabContentItem>
-		<Frame defaultPage="schedule/schedule-items-page" />
+		<Frame defaultPage="schedule/schedule-sessions-page" />
 	</TabContentItem>
 
 	<TabContentItem>
