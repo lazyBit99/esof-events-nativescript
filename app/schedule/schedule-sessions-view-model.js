@@ -9,7 +9,7 @@ const redata = data.map(session => {
 function ScheduleSessionsViewModel() {
 	const viewModel = observableModule.fromObject({
 		sessions: redata,
-		myGroupingFunc: function(session) {
+		myGroupingFunc: session => {
 			return session.group
 		},
 	})
