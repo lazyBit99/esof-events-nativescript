@@ -11,18 +11,21 @@
                 <StackLayout class="header" orientation="horizontal">
                     <Image class="avatar" src="{{ img }}" stretch="aspectFill" />
                     <StackLayout orientation="vertical">
-                        <Label fontSize="16" text="{{ nome }}" />
-                        <Label text="{{ desc }}" textWrap="true" />
+                        <Label text="{{ nome }}" class="main" textWrap="true"/>
+                        <Label text="{{ desc }}" class="sub" textWrap="true"/>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout class="content" orientation="vertical">
-                    <Label text="Interventi" textWrap="true" />
+                    <Label text="Interventi" textWrap="true" class="main"/>
                     <Repeater items="{{ interventi }}">
                         <Repeater.itemsLayout>
                             <StackLayout />
                         </Repeater.itemsLayout>
                         <Repeater.itemTemplate>
-                            <Label text="{{ titolo }}" textWrap="true" />
+                            <StackLayout orientation="horizontal" class="fix">
+                                <Label text="&bull;" textWrap="true" class="bull"/>
+                                <Label text="{{ titolo }}" textWrap="true" class="sub"/>
+                            </StackLayout>
                         </Repeater.itemTemplate>
                     </Repeater>
                 </StackLayout>
