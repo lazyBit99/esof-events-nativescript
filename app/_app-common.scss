@@ -26,10 +26,7 @@
 
 // Custom tabstrip item class
 .navigation__item {
-	// &:active,
-	// &:active Label {
-	// 	@include colorize($contrasted-color: complementary background 20% 0%);
-	// }
+	color: white;
 
 	&.schedule-tab {
 		&:active {
@@ -38,22 +35,31 @@
 				color: $scheduleColor;
 			}
 		}
-    }
-    
-    &.speakers-tab {
+	}
+
+	&.speakers-tab {
 		&:active {
 			label,
 			image {
 				color: $speakersColor;
 			}
 		}
-    }
-    
-    &.map-tab {
+	}
+
+	&.map-tab {
 		&:active {
 			label,
 			image {
 				color: $mapColor;
+			}
+		}
+	}
+
+	&.information-tab {
+		&:active {
+			label,
+			image {
+				color: $informationColor;
 			}
 		}
 	}
@@ -77,4 +83,8 @@
 }
 Page {
 	background-color: #f2f2f2;
+}
+
+TabStrip {
+	background-color: black;
 }
