@@ -1,6 +1,7 @@
+const observableModule = require('tns-core-modules/data/observable')
 const MapViewModel = require('./map-view-model')
 const Image = require('tns-core-modules/ui/image').Image
-const ImageSource = require('tns-core-modules/image-source')
+const ImageSource = require('tns-core-modules/image-source').ImageSource
 const mapsModule = require('nativescript-google-maps-sdk')
 const geoJson = require('./data')
 
@@ -21,11 +22,22 @@ function onMapReady(args) {
 			feature.geometry.coordinates[0],
 		)
 
-        marker.title = feature.properties.name
 
-       
+		// function getIcon() {
+		// 	let icon = observableModule.fromObject({
+		// 		url: feature.properties.icon,
+		// 		createIcon: url => {
+		// 			let res = ImageSource.fromUrl(url)
+		// 			return Image.fromResource(res)
+		// 		},
+		// 	})
 
-        // marker.icon = myIcon
+		// 	return icon
+		// }
+
+		// marker.icon = getIcon()
+		marker.title = feature.properties.name
+
 		marker.color = 254 // hue value
 		marker.userData = { index: 1 }
 		mapView.addMarker(marker)
