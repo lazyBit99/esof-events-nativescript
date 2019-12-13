@@ -2,7 +2,7 @@
     navigatingTo="onNavigatingTo"
     xmlns:maps="nativescript-google-maps-sdk">
 
-    <ActionBar>
+    <ActionBar class="map">
         <Label text="Map"></Label>
     </ActionBar>
 
