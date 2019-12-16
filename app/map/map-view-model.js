@@ -5,7 +5,9 @@ function MapViewModel() {
         latitude: 45.6522854,
         longitude: 13.7661518,
         zoom: 14
-    });
+    })/*.then((data) = {
+
+    });*/
 
     return viewModel;
 }
