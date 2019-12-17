@@ -1,5 +1,5 @@
 const application = require('tns-core-modules/application')
-const config = require('./config')
+const config = require('./example.config')
 const APIKey = config.google.map.provideAPIKey || 'AIzaSyCP6f-dKamOLNSpy2nU34Xi4aQlB-sgNRo'
 
 // Google Maps SDK API KEY
