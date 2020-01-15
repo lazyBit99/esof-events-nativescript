@@ -14,7 +14,7 @@ function onMapReady(args) {
 	const mapView = args.object
 
 	geoJson.features.forEach(feature => {
-		console.log('feature', feature.geometry.coordinates[0])
+		// console.log('feature', feature.geometry.coordinates[0])
 
 		const marker = new mapsModule.Marker()
 		marker.position = mapsModule.Position.positionFromLatLng(
