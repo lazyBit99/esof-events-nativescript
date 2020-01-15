@@ -5,7 +5,9 @@
         <Label text="Schedule" />
     </ActionBar>
 
-    <lv:RadListView class="myList" items="{{ sessions }}" row="1" groupingFunction="{{ myGroupingFunc }}">
+    <lv:RadListView class="myList" items="{{ sessions }}" row="1" groupingFunction="{{ myGroupingFunc }}"
+    pullToRefresh="true"
+    pullToRefreshInitiated="{{onPullToRefreshInitiated}}">
         <lv:RadListView.itemTemplate>
             <StackLayout orientation="vertical">
                 <StackLayout class="wrap">
