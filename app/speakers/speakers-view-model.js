@@ -1,32 +1,22 @@
-const observableModule = require('tns-core-modules/data/observable')
-const data = require('./data')
+const ObservableArray = require('tns-core-modules/data/observable-array').ObservableArray
+const firebase = require('nativescript-plugin-firebase/app')
 
-const dataToSpeakers = data.map(speaker => {
-	// speaker.interventocompleto = `${speaker.nome} — ${speaker.inizio} ${speaker.fine}`
-	return speaker
+let speakersObservable = new ObservableArray()
+let speakers = firebase.firestore().collection('speakers')
+
+speakers.get().then(documents => {
+	documents.forEach(document => {
+		let speaker = document.data()
+		speakersObservable.push(speaker)
+	})
 })
 
-const dataToInterventi = data.map(interventi => {
-	// speaker.interventocompleto = `${speaker.nome} — ${speaker.inizio} ${speaker.fine}`
-	return interventi
-})
+function cardToViewModel() {
+	const viewModel = {
+		speakers: speakersObservable
+	}
 
-function SpeakerViewModel() {
-	const viewModel = observableModule.fromObject({
-		speakers: dataToSpeakers,
-    })
-    
 	return viewModel
 }
 
-
-function InterventiViewModel() {
-	const viewModel = observableModule.fromObject({
-		speakers: dataToInterventi,
-    })
-    
-	return viewModel
-}
-
-module.exports = SpeakerViewModel
-module.exports = InterventiViewModel
+module.exports = cardToViewModel
