@@ -13,6 +13,12 @@ firebase
 	.initializeApp({
 		iOSEmulatorFlush: false,
 		persist: false,
+		onAuthStateChanged: data => {
+			console.log(data.loggedIn ? 'LOGGED' : 'LOGGED OUT')
+			if (data.loggedIn) {
+				console.log('DATA', data)
+			}
+		},
 	})
 	.then(
 		() => {
