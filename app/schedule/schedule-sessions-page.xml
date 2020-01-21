@@ -1,22 +1,23 @@
 <Page navigatingTo="onNavigatingTo" 
-    xmlns:lv="nativescript-ui-listview">
+	xmlns:lv="nativescript-ui-listview">
 
-    <ActionBar class="schedule">
-        <Label text="Schedule" />
-    </ActionBar>
+	<ActionBar class="schedule">
+		<Label text="Schedule" />
+		<ActionItem tap="showDialog" ios.position="right" ios.systemIcon="17"></ActionItem>
+	</ActionBar>
 
-    <lv:RadListView class="myList" items="{{ sessions }}" row="1" groupingFunction="{{ myGroupingFunc }}"
-    pullToRefresh="true"
-    pullToRefreshInitiated="{{onPullToRefreshInitiated}}">
-        <lv:RadListView.itemTemplate>
-            <StackLayout orientation="vertical">
-                <StackLayout class="wrap">
-                    <Label fontSize="16" class="border-list" text="{{ nome }}" textWrap="true"></Label>
-                    <Label fontSize="13" class="border-list subtitle" text="{{ subtitle }}" textWrap="true">
-                    </Label>
-                    <StackLayout class="separator" />
-                </StackLayout>
-            </StackLayout>
-        </lv:RadListView.itemTemplate>
-    </lv:RadListView>
+	<GridLayout visibility="{{ isLogged ? 'visible' : 'collapsed' }}">
+		<lv:RadListView class="myList" items="{{ sessions }}" row="1" groupingFunction="{{ myGroupingFunc }}" pullToRefresh="false" pullToRefreshInitiated="{{ onPullToRefreshInitiated }}">
+			<lv:RadListView.itemTemplate>
+				<StackLayout orientation="vertical">
+					<StackLayout class="wrap">
+						<Label fontSize="16" class="border-list" text="{{ nome }}" textWrap="true"></Label>
+						<Label fontSize="13" class="border-list subtitle" text="{{ subtitle }}" textWrap="true">
+						</Label>
+						<StackLayout class="separator" />
+					</StackLayout>
+				</StackLayout>
+			</lv:RadListView.itemTemplate>
+		</lv:RadListView>
+	</GridLayout>
 </Page>
