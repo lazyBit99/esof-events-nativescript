@@ -4,6 +4,8 @@ const firebase = require('nativescript-plugin-firebase')
 
 const viewModel = new ScheduleSessionsViewModel()
 
+const fn = firebase.functions.httpsCallable('helloName')
+
 let onNavigatingTo = args => {
 	const component = args.object
 	component.bindingContext = viewModel
@@ -98,3 +100,19 @@ let showDialog = () => {
 
 exports.onNavigatingTo = onNavigatingTo
 exports.showDialog = showDialog
+exports.showFunction = () => {
+	fn('Firebase from NativeScript')
+		.then(myData => {
+			alert({
+				title: 'Firebase Functions Output',
+				message: myData.messaggio,
+				okButtonText: 'OK',
+			})
+		})
+		.catch(err => {
+			alert({
+				title: 'Error',
+				message: err,
+			})
+		})
+}
